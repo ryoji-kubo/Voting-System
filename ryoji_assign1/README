@@ -1,0 +1,34 @@
+mvote is an application to control the voting systems. 
+please refer to the assignment sheet for the detailed explanation.
+
+Below are the commands you can input in prompt. In addition to the commands specified in the assignment sheet, I added #11 display function.
+
+1. l <key>
+lookup the hash-table for a voter with id: <key>. If found, print the pertinent record out on the tty; otherwise, print an error indication.
+2. i <rin> <lname> <fname> <zip>
+inserts all information for a specific voter whose ID is <rin>, last and first names are <lname> and <fname> respectively, and she/he resides in <zip>. All inserted voters have their voting status initially set to NO. If <rin> already exists, abort and present an error message.
+3. d <rin>
+delete the voter with ID <rin>. If there is no such a voter on the structure, take no farther action and print a corresponding message.
+4. r <rin>
+register the voter with ID <rin> as having already voted by changing her status to YES. If <rin> is already marked as YES, no farther action is needed and a appropriate message is displayed.
+5. bv <fileofkeys>
+bulk-vote for all the keys (i.e., <rin>s) that appears in file fileofkeys>. For each attempted vote marking, the operation should have a similar behavior to that of “r <rin>” just above.
+6. v
+present the number of people marked as having voted so far.
+7. perc
+display the percentage of people whose vote has been as YES over the number of poll participants who are part of the hast-table.
+8. z <zipcode>
+print the number of all poll participants marked as having voted YES and list their ids one id per line.
+9. o
+produce a output list of zipcodes in decreasing order of the number of people who live in each zipcode and have marked as Y(es). One zipcode along with the number of voters marked as YES is displayed per line.
+10. exit
+terminate the program but before gracefully release all dynamically allocated memory.
+11. display
+display all the content in the Hash table as well as the zip code linked list. 
+
+
+to make use of the makefile (haha)
+use make to create executable and execute it by ./mvote -f registeredvoters -m hashtablesize
+use make clean to remove all files.
+
+happy valentines day.

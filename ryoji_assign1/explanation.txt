@@ -1,0 +1,38 @@
+The OS project 1 consists of the following main files;
+
+mvote.cpp mvote.h
+hash.cpp hash.h
+zipList.cpp zipList.h
+participant.cpp participant.h
+
+It is organized in this way so that;
+(i) the declarations and definitions are seperated
+(ii) high coupling and low cohesion, the highly intertwined classes are put closer for ease of understanding
+(iii) smooth makefile process
+
+mvote.cpp has the main functionality of the application. If you look at the code of the file, you can tell that all of these functions aligns
+with the functionality written in the assignment sheet. Each of these functions calls the required specific functions from different files.
+There are a lot of safeguarding measure to make sure that user do not face unexpected outcomes.
+
+In addition to the prompt specified in the assignment sheet, I have added another functionality where you can view all the content of the Hash table
+and the zip code singly linked list by inputting "display".
+
+hash.cpp is the file where the hash table is implemented. It consists of the Hash class, which has a pointer to an array of pointers as its member.
+This array of pointers is the bucket that is used to implement the hash table. All the necessarily functions are also made in the Hash functions for
+smooth execution of the program. The hash table is decided by the user and the hash function uses simple mod calculation.
+
+hash.cpp also has the file for the linkedList denoted by the class MyLinkedList and Node. Each pointer of the array of pointers in Hash will point towards
+one object of type MyLinkedList, and each linkedList has its node Node, whose element is of type Voter. This allows smooth access and storing of the 
+required information.
+
+zipList.cpp is the file where the singly linked list based on the zip codes is implemented. It consists of zipList class and zipNode class, each representing
+the main linked list and its node whose element is of type int (zip code). One thing to note is that each node of this list contains a pointer to another list, 
+VotedList, which is also implemented in this file. VotedList, along with VotedNode, stores pointers to the Voter object who has voted. 
+
+finally, participant.cpp is the file where the implementation for the Voter class is done. This is the smallest scale class where it holds the 
+basic information of each Voter object such as its name, RIN, zip code. 
+
+The code implemented utilizes high coupling and low cohesion, so the related classes are placed closely and has lot of functions that work together and
+it makes sure that each call to a function designates its appropriate actor.
+
+Additionally, it should be noted that there are code that I took from either online sources or class contents (referenced in the code)
